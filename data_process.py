@@ -18,7 +18,7 @@ def some_func():
         amp_val = []
         global flag
         for i in range(0, len(freq)):
-            if fq-125000.0 <= freq[i] <= fq+12500:
+            if fq-12500.0 <= freq[i] <= fq+12500.0:
                 flag = 1
                 amp_val.append(amp[i])
             try:

@@ -14,8 +14,8 @@ def service_func():
         t.insert("4.0", "\nAnalyzing Data.....\n")
         top.update_idletasks()
         time.sleep(3)                           # Paused for dramatic effect, can be removed for instant results
-        c, amp_val, chplan = data_process.some_func()                 # Input variables for printing in status window
-        if c == 0:
+        flag, amp_val, chplan = data_process.some_func()                 # Input variables for printing in status window
+        if flag == 0:
             t.insert("5.0", "Mandatory channels not implemented\n")
             top.update_idletasks()
         else:

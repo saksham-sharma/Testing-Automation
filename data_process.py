@@ -13,7 +13,7 @@ def some_func():
     freq = data['Frequency'].values
     print("\n")
 
-    def mean_func(fq):
+    def mean_func(fq):                  # function to calculate amplitude mean of center frequencies
         amp_val = []
         global flag
         for i in range(0, len(freq)):
@@ -24,8 +24,7 @@ def some_func():
                 return mean(amp_val)
             except:
                 pass
-    # # checking the channel plan
-
+    # calling the function and appending values to a 2D array
     val.append([mean_func(865062500.0), 865062500.0])
     val.append([mean_func(865402500.0), 865402500.0])
     val.append([mean_func(865985000.0), 865985000.0])

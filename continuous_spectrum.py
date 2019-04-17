@@ -12,6 +12,8 @@ rsa = cdll.LoadLibrary("RSA_API.dll")
 # ctypes.windll.LoadLibrary("C:\\Tektronix\\RSA_API\\lib\\x64\\RSA_API.dll")
 
 # create Spectrum_Settings data structure
+
+
 class Spectrum_Settings(Structure):
     _fields_ = [('span', c_double),
                 ('rbw', c_double),

@@ -27,13 +27,13 @@ def service_func():
             if max(amp_val < 30):
                 t.insert("7.0", "\nPower transmitted well within acceptable values\n")
                 top.update_idletasks()
-        except ValueError:
+        except ValueError:               # error exception for amplitudes being zero resulting in error in mean function
             t.insert("7.0", "No peak observed!")
 
     def read():
         t.insert("1.0", "Reading Data Values.....\n")
         top.update_idletasks()
-        noise = continuous_spectrum.main()
+        noise = continuous_spectrum.main()                         # noise floor variable imported from spectrum program
         t.insert("2.0", "Noise Floor is: ")
         t.insert("3.0", "{} dB".format(noise))
         top.update_idletasks()

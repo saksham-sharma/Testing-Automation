@@ -38,6 +38,9 @@ def service_func():
         t.insert("3.0", "{} dB".format(noise))
         top.update_idletasks()
 
+    def clear():
+        t.delete('1.0', tkinter.END)
+
     h = tkinter.Label(text="DEVICE TESTING PROGRAM", font='Helvetica 18 bold')               # Creates the heading
 
     # Creating buttons for the window
@@ -50,7 +53,11 @@ def service_func():
     b4 = tkinter.Button(text="Quit", height='2', font='Helvetica 11', command=exit)
     b4.place(x=20, y=240)
 
+    b5 = tkinter.Button(text="Clear Status Window", height='2', font='Helvetica 11', command=clear)
+    b5.place(x=20, y=320)
+
     t.place(x=240, y=80)
+
     h.pack()
     top.mainloop()
 

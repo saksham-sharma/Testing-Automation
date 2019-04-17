@@ -66,7 +66,7 @@ def search_connect():
             exit()
     else:
         print('2 or more instruments found. Enumerating instruments, please wait.')
-        for inst in xrange(numFound.value):
+        for inst in range(numFound.value):
             rsa.DEVICE_Connect(deviceIDs[inst])
             rsa.DEVICE_GetSerialNumber(deviceSerial)
             rsa.DEVICE_GetNomenclature(deviceType)

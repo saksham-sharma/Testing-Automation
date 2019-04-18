@@ -7,7 +7,7 @@ def some_func():
     file = "Data.xls"
     data = pd.read_excel(file)
     val = []
-    flag = 1
+    flag = 1                                # temp variable for identifying no peaks condition
     # Assigning variables to columns of data sheet
     amp = data['Amplitude'].values
     freq = data['Frequency'].values
@@ -35,7 +35,6 @@ def some_func():
     val.append([mean_func(865785000.0), 865785000.0])
 
     return flag, amp, val
-
 
 if __name__ == '__main__':
     some_func()

@@ -12,6 +12,8 @@ rsa = cdll.LoadLibrary("RSA_API.dll")
 # ctypes.windll.LoadLibrary("C:\\Tektronix\\RSA_API\\lib\\x64\\RSA_API.dll")
 
 # create Spectrum_Settings data structure
+
+
 class Spectrum_Settings(Structure):
     _fields_ = [('span', c_double),
                 ('rbw', c_double),
@@ -66,7 +68,7 @@ def search_connect():
             exit()
     else:
         print('2 or more instruments found. Enumerating instruments, please wait.')
-        for inst in xrange(numFound.value):
+        for inst in range(numFound.value):
             rsa.DEVICE_Connect(deviceIDs[inst])
             rsa.DEVICE_GetSerialNumber(deviceSerial)
             rsa.DEVICE_GetNomenclature(deviceType)

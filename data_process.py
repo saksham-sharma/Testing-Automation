@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 from statistics import mean
 
 
@@ -8,25 +7,24 @@ def some_func():
     file = "Data.xls"
     data = pd.read_excel(file)
     val = []
-    flag = 1
+    flag = 1                                # temp variable for identifying no peaks condition
     # Assigning variables to columns of data sheet
     amp = data['Amplitude'].values
     freq = data['Frequency'].values
     print("\n")
 
-    def mean_func(fq):
+    def mean_func(fq):                  # function to calculate amplitude mean of center frequencies
         amp_val = []
         global flag
         for i in range(0, len(freq)):
-            if freq[i] == fq:
+            if fq-12500.0 <= freq[i] <= fq+12500.0:
                 flag = 1
                 amp_val.append(amp[i])
             try:
                 return mean(amp_val)
             except:
                 pass
-    # # checking the channel plan
-
+    # calling the function and appending values to a 2D array
     val.append([mean_func(865062500.0), 865062500.0])
     val.append([mean_func(865402500.0), 865402500.0])
     val.append([mean_func(865985000.0), 865985000.0])
@@ -37,7 +35,6 @@ def some_func():
     val.append([mean_func(865785000.0), 865785000.0])
 
     return flag, amp, val
-
 
 if __name__ == '__main__':
     some_func()
